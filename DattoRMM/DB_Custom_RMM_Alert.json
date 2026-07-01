@@ -101,7 +101,12 @@
           {
             "type": "Action.OpenUrl",
             "title": "Web Remote",
-            "url": "https://[platform].centrastage.net/csm/remote/rto/[device_id]"
+            "url": "https://[platform].rmm.datto.com/web-remote/[device_id]"
+          },
+          {
+            "type": "Action.OpenUrl",
+            "title": "ScreenConnect",
+            "url": "[device_udf15]"
           }
         ]
       },
