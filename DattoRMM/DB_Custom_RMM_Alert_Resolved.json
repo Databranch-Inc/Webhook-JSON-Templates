@@ -1,0 +1,117 @@
+{
+  "type": "AdaptiveCard",
+  "attachments": [
+    {
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "kind": "TeamsWebhook",
+        "type": "AdaptiveCard",
+        "version": "1.4",
+        "body": [
+          {
+            "type": "TextBlock",
+            "size": "medium",
+            "weight": "bolder",
+            "text": "Datto RMM Alert - RESOLVED",
+            "wrap": true
+          },
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "https://static.wixstatic.com/media/85fd0c_64287e1d1b5a4b639b60785525618ed9~mv2.png/v1/fill/w_154,h_146,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Databranch-Logo-Art-Circuitry.png",
+                    "altText": "RMM Alert",
+                    "size": "small"
+                  }
+                ],
+                "width": "auto"
+              },
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "weight": "bolder",
+                    "text": "[alert_type] Alert",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "spacing": "none",
+                    "text": "[alert_priority]",
+                    "isSubtle": true,
+                    "wrap": true
+                  }
+                ],
+                "width": "stretch"
+              }
+            ]
+          },
+          {
+            "type": "TextBlock",
+            "text": "[alert_message_en]",
+            "wrap": true
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "Site:",
+                "value": "[site_name]"
+              },
+              {
+                "title": "Device:",
+                "value": "[device_hostname] / [device_ip]"
+              },
+              {
+                "title": "Last User:",
+                "value": "[last_user]"
+              },
+              {
+                "title": "Description:",
+                "value": "[device_description]"
+              },
+              {
+                "title": "OS:",
+                "value": "[device_os]"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.OpenUrl",
+            "title": "Device",
+            "url": "https://[platform].rmm.datto.com/device/[device_id]"
+          },
+          {
+            "type": "Action.OpenUrl",
+            "title": "Site",
+            "url": "https://[platform].rmm.datto.com/site/[site_id]"
+          },
+          {
+            "type": "Action.OpenUrl",
+            "title": "View Alert",
+            "url": "https://[platform].rmm.datto.com/alert/[alert_uid]"
+          },
+          {
+            "type": "Action.OpenUrl",
+            "title": "Web Remote",
+            "url": "https://[platform].centrastage.net/csm/remote/rto/[device_id]"
+          },
+           {
+            "type": "Action.OpenUrl",
+            "title": "ScreenConnect",
+            "url": "[device_udf15]"
+          }
+        ]
+      },
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "contentUrl": null
+    }
+  ]
+}
