@@ -1,0 +1,112 @@
+{
+	"type": "AdaptiveCard",
+	"attachments": [
+		{
+			"content": {
+				"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+				"kind": "TeamsWebhook",
+				"type": "AdaptiveCard",
+				"version": "1.4",
+				"body": [
+					{
+					"type": "TextBlock",
+					"size": "medium",
+					"weight": "bolder",
+					"text": "RMM Alert - Designed to be used with Microsoft Teams Workflows",
+					"wrap": true
+					},
+					{
+					"type": "ColumnSet",
+					"columns": [
+						{
+						"type": "Column",
+						"items": [
+							{
+							"type": "Image",
+							"url": "https://i.imgur.com/YJhsAgQ.png",
+							"altText": "RMM Alert",
+							"size": "small"
+							}
+						],
+						"width": "auto"
+					},
+					{
+						"type": "Column",
+						"items": [
+							{
+								"type": "TextBlock",
+								"weight": "bolder",
+								"text": "[alert_type] Alert",
+								"wrap": true
+							},
+							{
+								"type": "TextBlock",
+								"spacing": "none",
+								"text": "[alert_priority]",
+								"isSubtle": true,
+								"wrap": true
+							}
+						],
+						"width": "stretch"
+					}
+				]
+			},
+			{
+				"type": "TextBlock",
+				"text": "[alert_message_en]",
+				"wrap": true
+			},
+			{
+				"type": "FactSet",
+				"facts": [
+					{
+						"title": "Site:",
+						"value": "[site_name]"
+					},
+					{
+						"title": "Device:",
+						"value": "[device_hostname] / [device_ip]"
+					},
+					{
+						"title": "Last User:",
+						"value": "[last_user]"
+					},
+					{
+						"title": "Description:",
+						"value": "[device_description]"
+					},
+					{
+						"title": "OS:",
+						"value": "[device_os]"
+					}
+				]
+			}
+		],
+		"actions": [
+			{
+				"type": "Action.OpenUrl",
+				"title": "Device",
+				"url": "https://[platform].rmm.datto.com/device/[device_id]"
+			},
+			{
+				"type": "Action.OpenUrl",
+				"title": "Site",
+				"url": "https://[platform].rmm.datto.com/site/[site_id]"
+			},
+			{
+				"type": "Action.OpenUrl",
+				"title": "View Alert",
+				"url": "https://[platform].rmm.datto.com/alert/[alert_uid]"
+			},
+			{
+				"type": "Action.OpenUrl",
+				"title": "Web Remote",
+				"url": "https://[platform].rmm.datto.com/web-remote/[device_id]"
+			}
+		]
+	},
+	"contentType": "application/vnd.microsoft.card.adaptive",
+	"contentUrl": null
+}
+]
+}
